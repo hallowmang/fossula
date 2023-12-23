@@ -1,0 +1,391 @@
+.header{
+  position: fixed;
+  display: flex;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 80px;
+  transition: 0.3s filter ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  // visibility: hidden;
+  .header-logo{
+    position: relative;
+    top: 0;
+    width: calc((100vw * 0.334) / 2 - 80px);
+    .a{
+      position: relative;
+      font-size: 18px;
+      cursor: pointer;
+      ::after{
+        content: '';
+        width: 0;
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        height: 1px;
+        background-color: black;
+        transition: 0.3s width, 0.3s background-color;
+      }
+      svg{
+        width: 100px;
+        position: relative;
+        
+        // top: -1px;
+        path{
+          transition: 0.3s ease-in-out;
+          fill: white;
+        }
+      }
+    }
+  }
+
+  ul{
+    display: flex;
+    align-items: center;
+  }
+  
+  a{
+    font-family: $font-albra;
+    font-size: 18px;
+    color: white;
+    transition: 0.3s ease-in-out;
+  }
+
+  .header-menu-left{
+    li{
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+  }
+
+  .header-menu-right{
+    display: flex;
+    margin-left: auto;
+    margin-right: 0;
+    transition: 0.3s ease-in-out;
+    li{
+      &:first-child{
+        margin-right: 45px;
+      }
+      &:last-child{
+        position: relative;
+        path{
+          transition: 0.3s ease-in-out;          
+          fill: white;
+        }
+      }
+    }
+  }
+  
+  .menu-dot{
+    width: 30px;
+    transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
+  }
+  .close-desktop-box{
+    // display: none;
+    background: #000;
+    .menu-trigger-close{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 44px;
+      height: 44px;
+      // visibility: hidden;
+    }
+  }
+  .close-mobile-box{
+    // display: none;
+    .menu-trigger-close{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 44px;
+      height: 44px;
+      visibility: hidden;
+    }
+  }
+}
+
+
+
+
+
+// 화면 너비가 768px 미만일 때 스타일을 적용
+@include small-mobile {
+  /* 작은 모바일 디바이스 스타일 */
+  .header{
+    padding: 35px 25px 25px 25px;
+    .header-logo{      
+      width: 170px;
+      .a{
+        transition: 0.3s color ease-in-out;
+        ::after{
+          content: '';
+          width: 0;
+          position: absolute;
+          bottom: 1px;
+          left: 0;
+          height: 1px;
+          background-color: black;
+          transition: 0.2s width, 0.2s background-color;
+        }
+        svg{
+          width: 84px;
+          path{
+            fill: white;
+          }
+        }
+      }
+    }
+  
+    ul{
+      display: none;
+      align-items: center;
+      transition: 0.3s opacity ease-in-out;
+    }
+  
+    a{
+      font-family: $font-albra;
+      font-size: 18px;
+      color: white;
+    }
+    .header-menu-left{
+      display: none;
+    }
+
+  
+    .header-menu-right{
+      
+      li{
+        &:first-child{
+          display: none;
+          margin-right: 45px;
+        }
+        &:last-child{
+          path{
+            fill: white;
+          }
+          .menu-dot{
+            width: 21px;            
+          }
+        }
+      }
+      
+    }
+  
+    .close-desktop-box{
+      // display: none;
+      .menu-trigger-close{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 44px;
+        height: 44px;
+        visibility: hidden;
+      }
+    }
+    .close-mobile-box{
+      // display: none;
+      .menu-trigger-close{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 44px;
+        height: 44px;
+        visibility: hidden;
+      }
+    }
+  }
+}
+// 화면 너비가 769px 이상에서 1024px 미만일 때 스타일을 적용
+@include medium-mobile {
+  /* 중간 크기의 모바일 디바이스 스타일 */
+  .header{    
+    padding: 40px;    
+    // visibility: hidden;
+    .header-logo{
+      width: 170px;
+      .a{
+        ::after{
+        }
+        svg{
+          width: 100px;
+          position: relative;
+          // top: -1px;
+          path{
+            fill: white;
+          }
+        }
+      }
+    }
+  
+    ul{
+      display: flex;
+      align-items: center;
+      transition: 0.3s opacity ease-in-out;
+    }
+  
+    a{
+      font-family: $font-albra;
+      font-size: 16px;
+      color: white;
+    }
+  
+    .header-menu-left{
+      li{
+        &:first-child{
+          margin-left: 0;
+        }
+      }
+    }
+  
+    .header-menu-right{
+      display: flex;
+      margin-left: auto;
+      margin-right: 0;
+      li{
+        &:first-child{
+          margin-right: 45px;
+        }
+        &:last-child{
+          position: relative;
+          path{
+            fill: white;
+          }
+        }
+      }
+    }
+  
+    .menu-dot{
+      width: 30px;
+      fill:white;
+      transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
+    }
+    .close-desktop-box{
+      // display: none;
+      .menu-trigger-close{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 44px;
+        height: 44px;
+        visibility: hidden;
+      }
+    }
+    .close-mobile-box{
+      // display: none;
+      .menu-trigger-close{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 44px;
+        height: 44px;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+// 화면 너비가 1025px 이상에서 1440px 미만일 때 스타일을 적용
+@include desktop-low-res {
+  /* 데스크탑 - 일반 해상도 스타일 */
+  .header{
+    padding: 60px;
+    // visibility: hidden;
+    .header-logo{
+      width: 170px;
+      .a{
+        font-size: 18px;
+        ::after{
+        }
+        svg{
+          width: 100px;
+          path{
+            fill: white;
+          }
+        }
+      }
+    }
+  
+    ul{
+    }
+  
+    a{
+      font-size: 16px;
+    }
+  
+    .header-menu-left{
+      li{
+        &:first-child{
+          margin-left: 0;
+        }
+      }
+    }
+  
+    .header-menu-right{
+      display: flex;
+      margin-left: auto;
+      margin-right: 0;
+      li{
+        &:first-child{
+          margin-right: 45px;
+        }
+        &:last-child{
+          position: relative;
+          path{
+            fill: white;
+          }
+        }
+      }
+    }
+  
+    .menu-dot{
+      width: 30px;
+      fill:white;
+      transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
+    }
+    .close-desktop-box{
+      // display: none;
+      .menu-trigger-close{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 44px;
+        height: 44px;
+        visibility: hidden;
+      }
+    }
+    .close-mobile-box{
+      // display: none;
+      .menu-trigger-close{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 44px;
+        height: 44px;
+        visibility: hidden;
+      }
+    }
+  }
+}

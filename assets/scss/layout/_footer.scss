@@ -1,0 +1,356 @@
+.footer{
+  background: #000;
+  padding: 80px 0 90px;
+  .footer-inner{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc(calc((100vw * 0.666) / 4) * 4);
+    max-width: 1706px;
+    margin: 0 auto;
+    .footer-logo{
+      width: 100px;
+      margin-bottom: 53px;
+      img{
+        width: 100%;
+      }
+    }
+    .footer-info{
+      font-size: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 600px;
+      color: #fff;
+      .info-detail{
+        margin-right: 14px;
+        margin-bottom: 15px;
+        .foo-label{
+          font-weight: 700;
+          margin-right: 3px;
+          cursor: pointer;
+        }
+        .foo-text{}
+      }
+    }
+    .footer-copyright-group{
+      display: flex;
+      justify-content: space-between;
+      padding-top: 35px;
+      margin-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: $font-roboto;
+      .copyright{
+        font-family: $font-roboto;
+        font-size: 13px;
+        color: #666666;
+        /* text-transform: uppercase; */
+      }
+      .footer-social{
+        display: flex;
+        a{
+          color: white;
+          font-size: 13px;
+          font-weight: bold;
+          margin-left: 25px;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .family-site{
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: white;
+      font-size: 13px;
+      cursor: pointer;
+      &.on{
+
+        .family-site-menu{
+          opacity: 1;
+          // transform: translateY(0);
+          // pointer-events: auto;
+        }
+        .label{
+          img{
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      
+      .family-wrapper{
+        position: relative;
+        .label{
+          display: flex;
+          align-items: center;
+          text-decoration: underline;
+          font-family: $font-roboto;
+          img{
+            position: relative;
+            top: 0px;
+            margin-left: 10px;
+            transition: 0.3s transform ease-in-out;
+            width: 15px;
+          }
+        }
+        .family-site-menu{
+          z-index: 999;
+          position: absolute;
+          top: 34px;
+          left: -10px;
+          background-color: white;
+          color: black;
+          border-radius: 9px;
+          padding: 20px 40px 20px 20px;
+          box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+          pointer-events: none;
+          // transform: translateY(-15px);
+          // transition: 0.3s opacity ease-in-out, 0.3s transform ease-in-out;
+          opacity: 0;
+          ul{
+            li{
+              padding: 5px 0;
+              cursor: pointer;
+              &:hover{
+                a{
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 화면 너비가 768px 미만일 때 스타일을 적용
+@include small-mobile {
+  /* 작은 모바일 디바이스 스타일 */
+  .footer{
+    padding: 60px 0 50px;
+    .footer-inner{
+      align-items: flex-start;
+      width: calc(100vw - 60px);
+      .footer-logo{
+        width: 100px;
+        margin-bottom: 53px;
+        img{
+          width: 100%;
+        }
+      }
+      .footer-info{
+        flex-direction: column;
+        .info-detail{
+          margin-right: 14px;
+          margin-bottom: 15px;
+          .foo-label{
+          }
+          .foo-text{}
+        }
+      }
+
+      .footer-copyright-group{
+        flex-direction: column-reverse;
+        border: none;
+        margin-bottom: 20px;
+        // margin-top: -100px;
+        .copyright{
+          font-family: $font-roboto;
+          font-size: 13px;
+          color: #666666;
+          /* text-transform: uppercase; */
+        }
+        .footer-social{
+          margin-bottom: 18px;
+          a{
+            margin-left: 0;
+            margin-right: 15px;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      .family-site{
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: white;
+        font-size: 13px;
+        cursor: pointer;
+        &.on{
+          .family-site-menu{
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+          }
+          .label{
+            img{
+              transform: rotate(180deg);
+            }
+          }
+        }
+  
+        
+        .family-wrapper{
+          position: relative;
+          .label{
+            display: flex;
+            align-items: center;
+            text-decoration: underline;
+            font-family: $font-roboto;
+            img{
+              position: relative;
+              top: 0px;
+              margin-left: 10px;
+              transition: 0.3s transform ease-in-out;
+              width: 15px;
+            }
+          }
+          .family-site-menu{
+            position: absolute;
+            top: 34px;
+            left: -21px;
+            background-color: white;
+            color: black;
+            border-radius: 9px;
+            padding: 20px 40px 20px 20px;
+            box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+            transform: translateY(-15px);
+            transition: 0.3s opacity ease-in-out, 0.3s transform ease-in-out;
+            opacity: 0;
+            ul{
+              li{
+                padding: 5px 0;
+                a{}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 화면 너비가 769px 이상에서 1024px 미만일 때 스타일을 적용
+@include medium-mobile {
+  /* 중간 크기의 모바일 디바이스 스타일 */
+  .footer{
+    padding: 70px 0 80px;
+    .footer-inner{
+      width: calc(calc((100vw * 0.75) / 2) * 2);
+      .footer-logo{
+        width: 100px;
+        margin-bottom: 53px;
+        img{
+          width: 100%;
+        }
+      }
+      .footer-info{
+        flex-direction: row;
+        .info-detail{
+          margin-right: 14px;
+          margin-bottom: 15px;
+          .foo-label{
+          }
+          .foo-text{}
+        }
+      }
+
+      .footer-copyright-group{
+        flex-direction: row;
+        // margin-top: -100px;
+        .copyright{
+          font-family: $font-roboto;
+          font-size: 13px;
+          color: #666666;
+          /* text-transform: uppercase; */
+        }
+        .footer-social{
+          margin-bottom: 0;
+          a{
+            margin-left: 25px;
+            margin-right: 0;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      .family-site{
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: white;
+        font-size: 13px;
+        cursor: pointer;
+        &.on{
+          .family-site-menu{
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+          }
+          .label{
+            img{
+              transform: rotate(180deg);
+            }
+          }
+        }
+  
+        
+        .family-wrapper{
+          position: relative;
+          .label{
+            display: flex;
+            align-items: center;
+            text-decoration: underline;
+            font-family: $font-roboto;
+            img{
+              position: relative;
+              top: 0px;
+              margin-left: 10px;
+              transition: 0.3s transform ease-in-out;
+              width: 15px;
+            }
+          }
+          .family-site-menu{
+            position: absolute;
+            top: 34px;
+            left: -10px;
+            background-color: white;
+            color: black;
+            border-radius: 9px;
+            padding: 20px 40px 20px 20px;
+            box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+            transform: translateY(-15px);
+            transition: 0.3s opacity ease-in-out, 0.3s transform ease-in-out;
+            opacity: 0;
+            ul{
+              li{
+                padding: 5px 0;
+                a{}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 화면 너비가 1025px 이상에서 1440px 미만일 때 스타일을 적용
+@include desktop-low-res {
+  /* 데스크탑 - 일반 해상도 스타일 */
+  
+}
+
+// 화면 너비가 1441px 이상에서 1920px 미만일 때 스타일을 적용
+@include desktop-high-res{
+
+}

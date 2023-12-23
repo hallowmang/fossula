@@ -1,0 +1,589 @@
+.main{
+  overflow: hidden;
+  .sc-visual{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin-bottom: 350px;
+    .visual-video-group{
+      position: relative;
+      z-index: -1;
+      width: 100%;
+      height: 100%;      
+      pointer-events: none;
+      overflow: hidden;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      pointer-events: none;
+      video{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .desktop-vimeo{}
+      .mobile-vimeo{
+        display: none;
+      }
+
+      .dimm{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+
+      .gradient-top{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(-180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.01) 100%);
+      }
+    }
+
+    .visual-title-group{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      h2{
+        font-family: $font-albra;
+        font-size: 70px;
+        line-height: 1.37;
+        font-weight: 400;
+        letter-spacing: -0.03em;
+        text-align: center;
+      }
+      span{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.78;
+        letter-spacing: -0.04em;
+      }
+
+      .btn-visual-box{
+        display: block;
+        /* width: max-content; */
+        border-radius: 50px;
+        border: 1px solid white;
+        transition: 0.3s background-color ease-in-out;
+        background-color: transparent;
+        margin-top: 38px;
+        cursor: pointer;
+        .btn-visual{
+          span{
+            font-family: $font-kr;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 37px;
+            display: flex;
+            align-items: center;
+            transition: 0.3s ease-in-out;
+          }
+        }
+        &:hover{
+          background-color: white;
+          span{
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .sc-firmingCream{
+    margin-bottom: 180px;
+  }
+
+  .sc-video{
+    margin-bottom: 150px;
+    height: 100vh;
+    cursor: pointer;
+    .video-box{
+      position: relative;
+      width: calc(calc((100vw * 0.666) / 4) * 4);
+      height: 37vw;
+      max-width: 1706px;
+      margin: 0 auto;
+      iframe{
+        width: 100%;
+        height: 100%;
+        // background: #ccc;
+      }
+    }
+  }
+
+  .sc-hya100{
+    margin-bottom: 350px;
+    .section-img-box{
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+
+  .sc-firmingEyeCream{
+    margin-bottom: 350px;
+  }
+
+  .sc-rolling-logo{
+    margin-bottom: 350px;
+    overflow: hidden;
+    .rollLogo-group{
+      display: flex;
+      justify-content: center;
+      .rollLogo-box{
+        width: 100vw;
+        &:nth-child(2){
+          margin: 0 10vw;
+        }
+        flex-shrink: 0;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .sc-brand-info{
+    margin-bottom: 350px;
+    .info-group{
+      display: flex;
+      flex-wrap: wrap;
+      width: calc(calc((100vw * 0.666) / 4) * 4);
+      max-width: 1706px;
+      margin: 0 auto;
+      .info-wrapper{
+        width: 50%;
+        margin-bottom: 150px;
+        .info-wrap{
+          
+          .info-box{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            h3{
+              font-family: $font-albra;
+              font-size: 56px;
+              letter-spacing: -0.03em;
+              line-height: 1.25;
+              text-transform: capitalize;
+              margin-bottom: 24px;
+              width: calc(calc((100vw * 0.666) / 4) * 1 + 100px);
+            }
+            p{
+              width: calc(calc((100vw * 0.666) / 4) * 1);
+              font-size: 16px;
+              line-height: 1.78;
+              letter-spacing: -0.04em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  
+}
+
+// 화면 너비가 768px 미만일 때 스타일을 적용
+@include small-mobile {
+  /* 작은 모바일 디바이스 스타일 */
+  .main {
+    .sc-visual{
+      margin-bottom: 150px;
+      .visual-video-group{
+        video{
+        }
+        .desktop-vimeo{
+          display: none;
+        }
+        .mobile-vimeo{
+          display: block;
+        }
+  
+        .dimm{
+          
+        }
+  
+        .gradient-top{
+          
+        }
+      }
+  
+      .visual-title-group{
+        top: 48%;
+        padding: 0 40px;
+        text-align: center;
+        h2{
+          font-size: 34px;
+          line-height: 1.2;
+        }
+        span{
+          margin-top: 2px;
+          font-size: 14px;
+        }
+  
+        .btn-visual-box{
+          display: block;
+          /* width: max-content; */
+          border-radius: 50px;
+          border: 1px solid white;
+          transition: 0.3s background-color ease-in-out;
+          background-color: transparent;
+          margin-top: 38px;
+          cursor: pointer;
+          .btn-visual{
+            span{              
+              padding: 10px 35px 10px;              
+            }
+          }
+          &:hover{
+            background-color: white;
+            span{
+              color: black;
+            }
+          }
+        }
+      }
+    }
+
+    .sc-video{
+      margin-bottom: 100px;
+      height: 45vh;
+      cursor: pointer;
+      .video-box{
+        width: calc(100vw - 50px);
+        height: 32vh;
+        iframe{
+          width: 100%;
+          height: 100%;
+          // background: #ccc;
+        }
+      }
+    }
+
+    .sc-hya100{
+      margin-bottom: 150px;
+      .section-img-box{
+      }
+    }
+
+    .sc-firmingEyeCream{
+      margin-bottom: 150px;
+    }
+
+    .sc-rolling-logo{
+      margin-bottom: 150px;
+      .rollLogo-group{
+        .rollLogo-box{
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .sc-brand-info{
+      margin-bottom: 150px;
+      .info-group{
+        flex-direction: column;
+        width: calc(100vw - 50px);
+        .info-wrapper{
+          width: 100%;
+          margin-bottom: 70px;
+          .info-wrap{
+            
+            .info-box{
+              display: flex;
+              flex-direction: column;
+              flex-wrap: wrap;
+              h3{
+                width: 100%;
+                font-size: 38px;
+                line-height: 1.26;
+                margin-bottom: 15px;
+              }
+              p{
+                width: 100%
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+// 화면 너비가 769px 이상에서 1024px 미만일 때 스타일을 적용
+@include medium-mobile {
+  /* 중간 크기의 모바일 디바이스 스타일 */
+  .main{
+    .sc-visual{
+      margin-bottom: 120px;
+      .visual-video-group{
+        video{
+        }
+        .desktop-vimeo{}
+        .mobile-vimeo{
+          display: none;
+        }
+
+        .dimm{
+        }
+
+        .gradient-top{
+        }
+      }
+
+      .visual-title-group{
+        
+        h2{
+          font-size: 50px;
+        }
+        span{
+          font-size: 14px;
+          line-height: 1.76;
+        }
+
+        .btn-visual-box{
+          display: block;
+          /* width: max-content; */
+          border-radius: 50px;
+          border: 1px solid white;
+          transition: 0.3s background-color ease-in-out;
+          background-color: transparent;
+          margin-top: 38px;
+          cursor: pointer;
+          .btn-visual{
+            span{
+              font-family: $font-kr;
+              font-size: 14px;
+              font-weight: 500;
+              padding: 13px 37px;
+              display: flex;
+              align-items: center;
+              transition: 0.3s ease-in-out;
+            }
+          }
+          &:hover{
+            background-color: white;
+            span{
+              color: black;
+            }
+          }
+        }
+      }
+    }
+
+    .sc-firmingCream{
+      margin-bottom: 140px;
+    }
+
+    .sc-video{
+      margin-bottom: 150px;
+      height: 45vh;
+      cursor: pointer;
+      .video-box{
+        width: calc(calc((100vw * 0.75) / 2) * 2);
+        height: 43vw;
+        iframe{
+        }
+      }
+    }
+
+    .sc-hya100{
+      margin-bottom: 120px;
+      .section-img-box{
+      }
+    }
+
+    .sc-firmingEyeCream{
+      margin-bottom: 120px;
+    }
+
+    .sc-rolling-logo{
+      margin-bottom: 120px;
+      .rollLogo-group{
+        .rollLogo-box{
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .sc-brand-info{
+      margin-bottom: 120px;
+      .info-group{
+        width: calc(calc((100vw * 0.75) / 2) * 2);
+        .info-wrapper{
+          width: 50%;
+          margin-bottom: 150px;
+          .info-wrap{
+            
+            .info-box{
+              display: flex;
+              flex-direction: column;
+              flex-wrap: wrap;
+              h3{
+                width: 80%;
+                font-size: 56px;
+                margin-bottom: 24px;
+              }
+              p{
+                width: calc(calc((100vw * 0.75) / 2) * 0.6);
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 화면 너비가 1025px 이상에서 1440px 미만일 때 스타일을 적용
+@include desktop-low-res {
+  /* 데스크탑 - 일반 해상도 스타일 */
+  .main{
+    .sc-visual{
+      margin-bottom: 120px;
+      .visual-video-group{
+        video{
+        }
+        .desktop-vimeo{}
+        .mobile-vimeo{
+          display: none;
+        }
+
+        .dimm{
+        }
+
+        .gradient-top{
+        }
+      }
+
+      .visual-title-group{
+        
+        h2{
+          font-size: 50px;
+        }
+        span{
+          font-size: 14px;
+          line-height: 1.76;
+        }
+
+        .btn-visual-box{
+          display: block;
+          /* width: max-content; */
+          border-radius: 50px;
+          border: 1px solid white;
+          transition: 0.3s background-color ease-in-out;
+          background-color: transparent;
+          margin-top: 38px;
+          cursor: pointer;
+          .btn-visual{
+            span{
+              font-family: $font-kr;
+              font-size: 14px;
+              font-weight: 500;
+              padding: 10px 37px;
+              display: flex;
+              align-items: center;
+              transition: 0.3s ease-in-out;
+            }
+          }
+          &:hover{
+            background-color: white;
+            span{
+              color: black;
+            }
+          }
+        }
+      }
+    }
+
+    .sc-firmingCream{
+      margin-bottom: 140px;
+    }
+
+    .sc-video{
+      margin-bottom: 300px;
+      height: 45vh;
+      cursor: pointer;
+      .video-box{
+        width: calc(calc((100vw * 0.7) / 2) * 2);
+        height: 40vw;
+        iframe{
+        }
+      }
+    }
+
+    .sc-hya100{
+      margin-bottom: 120px;
+    }
+
+    .sc-firmingEyeCream{
+      margin-bottom: 120px;
+    }
+
+    .sc-rolling-logo{
+      margin-bottom: 120px;
+      .rollLogo-group{
+        .rollLogo-box{
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .sc-brand-info{
+      margin-bottom: 120px;
+      .info-group{
+        width: calc(calc((100vw * 0.75) / 2) * 2);
+        .info-wrapper{
+          width: 50%;
+          margin-bottom: 150px;
+          .info-wrap{
+            
+            .info-box{
+              display: flex;
+              flex-direction: column;
+              flex-wrap: wrap;
+              h3{
+                width: 80%;
+                font-size: 56px;
+                margin-bottom: 24px;
+              }
+              p{
+                width: calc(calc((100vw * 0.75) / 2) * 0.6);
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 화면 너비가 1441px 이상에서 1920px 미만일 때 스타일을 적용
+@include desktop-high-res{
+
+}
